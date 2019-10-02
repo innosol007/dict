@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+const [, , ...args] = process.argv;
+// console.log(`args ${args}`)
+const api = require("./src/commands")
+
+if (args == 'play') {
+    require('./src/playcommand').play();
+} else {
+    const [command, word] = args;
+    api.commandCalls(command, word, true);
+
+}
